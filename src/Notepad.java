@@ -10,11 +10,11 @@ public class Notepad extends Frame
     Notepad()
     {
         setLayout(new GridLayout(1,1));
-        tx = new TextArea();
+        tx = new TextArea(); // creates layout for text 
         add(tx);
         MenuBar mb = new MenuBar();
-        Menu F = new Menu("File");
-        MenuItem n = new MenuItem("New");
+        Menu F = new Menu("File"); // create menu options 
+        MenuItem n = new MenuItem("New"); 
         MenuItem o = new MenuItem("Open");
         MenuItem s = new MenuItem("Save");
         MenuItem e = new MenuItem("Exit");
@@ -56,14 +56,14 @@ public class Notepad extends Frame
     {
         public void actionPerformed(ActionEvent e)
         {
-            tx.setText(" ");
+            tx.setText(" "); //file reader 
             setTitle(filename);
         }
     }
 
     class Open implements ActionListener
     {
-        public void actionPerformed(ActionEvent e)
+        public void actionPerformed(ActionEvent e)// gets user input action 
         {
             FileDialog fd = new FileDialog(Notepad.this, "select File",FileDialog.LOAD);
             fd.show();
@@ -79,7 +79,7 @@ public class Notepad extends Frame
 
     class Save implements ActionListener
     {
-        public void actionPerformed(ActionEvent e)
+        public void actionPerformed(ActionEvent e) // outputs and writes to the text editor 
         {
             FileDialog fd = new FileDialog(Notepad.this,"Save File",FileDialog.SAVE);
             fd.show();
